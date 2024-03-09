@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <title>RIPE 88 Local Hub</title>
+</head>
+<body>
+    <header class=" bg-[#454040] w-full text-white">
+        <div class="text-2xl lg:flex lg:justify-between w-full p-4 px-[30px]">
+            <div class="">
+                <a href="https://www.pwste.edu.pl/">
+                    <img src="https://www.pwste.edu.pl/wp-content/uploads/2023/10/PANS_LOGO-STICKY_WHITE_2.png"
+                        alt="PANS Jarosław" class="h-[40px]" />
+                </a>
+                <a class="lg:text-2xl text-4xl cursor-pointer" href="./index.html">
+                    RIPE 88 Local Hub at Pansjar.eu
+                </a>
+            </div>
+            <div class="lg:flex lg:items-center lg:gap-[20px] lg:pt-[10px] lg:pt-0 ">
+                <ul class="flex gap-[15px] items-center block pt-[15px] lg:pt-0 text-2xl lg:text-xl">
+                    <li class="cursor-pointer hover:text-gray-400 ease-in duration-75">
+                        <a href="./meeting-plan.html">
+                            Attend
+                        </a>
+                    </li>
+                    <li class="cursor-pointer hover:text-gray-400 ease-in duration-75">
+                        <a href="./meeting-plan.html">
+                            Meeting plan
+                        </a>
+                    </li>
+                    <li class="cursor-pointer hover:text-gray-400 ease-in duration-75">
+                        <a href="./venue.html">
+                            Venue
+                        </a>
+                    </li>
+                </ul>
+                <div class="flex gap-[15px]  lg:items-center text-bold text-xl text-[#a9a9a9] pt-[19px] lg:pt-0 lg:pl-4">
+                    <a class="cursor-pointer ease-in duration-75"
+                        href="https://www.facebook.com/PANSJaroslaw/?locale=pl_PL">
+                        <img class="h-[40px]" src="./images/Facebook.svg" alt="Facebook PANS">
+                    </a>
+                    <a class="cursor-pointer  ease-in duration-75" href="https://www.instagram.com/pansjaroslaw/">
+                        <img class="h-[40px] fill-white" src="./images/Instagram.webp" alt="Instagram PANS">
+                    </a>
+                    <a class="cursor-pointer  hover:text-red-600 ease-in duration-75"
+                        href="https://www.youtube.com/user/PWSTE/videos">
+                        <img class="h-[40px]" src="./images/Youtube.svg" alt="Youtube PANS">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="w-full text-center mt-[80px]">
+            <h2 class="font-bold text-6xl">Venue</h2>
+            <p class="mt-[40px] text-xl max-w-[700px] block mx-auto">
+                There are two entrances:
+                
+                is open until 18:00, has elevator that goes to the 4th floor and stairs to the 5th floor.
+                is always open, but only has the stairs.
+            </p>
+            <div class="w-full mt-[30px]">
+                <div id="map" class="mx-auto h-[390px] max-w-[700px] px-20px"></div>
+            </div>
+        </div>
+        <div class="my-[30px] max-w-[300px] mx-auto">
+            <a class="block text-center py-6 w-full text-2xl text-white bg-[#0033ff] rounded-md hover:bg-[#455699] ease-linear duration-75"
+            href="./meeting-plan.html">Attend</a>
+        </div>
+
+        <div class="w-full text-center">
+            <a href="https://www.google.pl/maps/place/Pa%C5%84stwowa+Akademia+Nauk+Stosowanych/@50.0116726,22.6760177,16.25z/data=!4m6!3m5!1s0x473c9bd00702269d:0x34c3e02f77a47069!8m2!3d50.0121564!4d22.6731636!16s%2Fg%2F1223q_n3?entry=ttu"
+            class="block mt-[30px] text-2xl underline font-bold text-[#0033ff] hover:text-[#455699] ease-linear duration-75">
+                View in the Google maps
+            </a>
+            
+        </div>
+    </main>
+        <footer class="h-[250px] mt-[100px] w-full bg-black text-center text-white flex flex-col gap-2 justify-center">
+            <p class="block">© 2024 PANSJAR</p>
+            <p class="block">Registration number 203482039</p>
+            <p class="block">info@pans.edu.pl</p>
+            <p class="block">+234 234 324</p>
+        </footer>
+</body>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
+</script>
+<script>
+    var map = L.map('map')
+    map.setView([50.01213427599804, 22.673124836463305], 17);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+    L.marker([50.01213427599804, 22.673124836463305]).addTo(map);
+
+</script>
+</html>
